@@ -1,0 +1,162 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona автор работы', false, true)
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    .works_container
+                        .section_inner
+                            .text_center
+                                h3.gl_caption.search_caption Illusion of infinity
+                        
+                                .work_block
+                                    .text_center
+                                        .work_img: img(src='i/authors/work_1.jpg')
+                                    
+                                        .work_info
+                                            .author_person
+                                                .author_avatar_holder
+                                                    .author_avatar
+                                                        img(src='i/authors/avatar_2.png')
+    
+                                                    .gl_caption.author_name.clr_black
+                                                        a.gl_link(href='#'): span Lera Kudryavceva
+
+                                                .clr_black.author_interview
+                                                    span.author_interview_icon
+                                                    a.gl_link.author_interview_link(href='#'): span Read interview
+                                                .work_price 80$
+                                                ul.work_params
+                                                    li Digital C-Print
+                                                    li 40 × 30 in
+                                                    li 101.6 × 76.2 cm
+                                                    li Edition of 3 + 2AP
+                                                    
+                                                .mob_only.text_center
+                                                    .author_work_options
+                                                        .author_share
+                                                            span.mb Share
+                                                            ul.author_share_list
+                                                                li: a.soc_link.soc_fb(href='#')
+                                                                li: a.soc_link.soc_tw(href='#')
+                                                                li: a.soc_link.soc_vk(href='#')
+
+                                            .author_contact_form
+                                                form(action='#')
+                                                    .form_cell
+                                                        input.f_input.input_v2.text_center(placeholder='Your full name')
+                                                    
+                                                    .form_cell
+                                                        input.f_input.input_v2.text_center(placeholder='Your e-mail adress')
+                                                    
+                                                    .form_cell
+                                                        textarea.f_input.input_v2(placeholder='Hi, I’m interested in purchasing this work. Could you please provide more information about the piece?')
+                                                    .form_cell
+                                                        button.btn_v1.subscribe_btn.black_btn_green Ask of question 
+                                                    
+                                    
+
+
+                        .section_inner: .other_works
+                            
+                            .gl_caption.article_caption More works by Lera Kudryavceva
+
+                            .article_holder
+                                ul#grid.article_list.clr_black.authors_mod
+                                    +loop_while(1)
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_1.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_2.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_3.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_4.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_5.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_6.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_7.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? 
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_8.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                 
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_9.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения 
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_10.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_11.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+    
+                        .section_inner
+                            .article_controls
+                                .text_center
+                                    .load_more
+                                        .load_more_box
+                                            span.load_more_arr.load_more_left
+                                            span.load_more_arr.load_more_top
+                                            span.load_more_arr.load_more_right
+                                            span.load_more_arr.load_more_bottom
+                                        .load_more_text Load more
+                                
+                                .pagination_holder
+                                    ul.pagination_list
+                                        li: a.pag_link.pag_prev(href='#'): span.mob_hidden Назад
+                                        li.active: a.pag_link.btn_v3(href='#') 1
+                                        li: a.pag_link.btn_v3(href='#') 2
+                                        li: a.pag_link.btn_v3(href='#') 3
+                                        li: a.pag_link.btn_v3.mob_hidden(href='#') 4
+                                        li: a.pag_link.btn_v3.mob_hidden(href='#') 5
+                                        li: a.pag_link.pag_next(href='#'): span.mob_hidden Вперёд
+                    
+                    .go_top_spacer
+                        
+            +header(true)
+            +aside_left()
+            +footer()

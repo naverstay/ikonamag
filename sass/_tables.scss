@@ -1,0 +1,29 @@
+.article_footer {
+  width: 100%;
+  margin-top: 16px;
+
+  td {
+    vertical-align: middle;
+    padding-left: 3px;
+
+    &.col_1 {
+      width: 34px;
+      padding-left: 0;
+
+      @include respond-to-max($resp_step_2) {
+        display: none;
+      }
+    }
+
+    &.col_2 {
+      @include respond-to-max($resp_step_2) {
+        padding-left: 0;
+      }
+    }
+
+    &.col_3 {
+      text-align: right;
+    }
+  }
+
+}

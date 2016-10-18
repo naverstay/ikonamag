@@ -1,0 +1,451 @@
+.search_container {
+  position: relative;
+  padding: 55px 0 20px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 92px;
+
+    .search_filter {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 195px;
+    }
+
+    .search_table_w {
+      margin: 0 -10px;
+    }
+
+    .search_result_tip {
+      margin-bottom: 137px;
+    }
+  }
+}
+
+.search_table_w {
+  margin: 0 -5px;
+}
+
+.search_table {
+  @extend %clearfix;
+
+  @include respond-to-min($resp_step_2) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    &:after {
+      display: none !important;
+    }
+  }
+}
+
+.search_item {
+  float: left;
+  text-align: center;
+  padding-right: 1px;
+  margin-bottom: 14px;
+  font: 800 22px/36px $CirceBold;
+
+  .gl_link {
+    display: block;
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 100%;
+
+    &:before {
+      border-radius: 100%;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: none;
+    display: table-cell;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
+
+    .gl_link {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.search_result_tip {
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+.search_filter {
+  padding: 23px 0 18px;
+}
+
+.author_block {
+  @extend %clearfix;
+  padding-top: 30px;
+  padding-bottom: 55px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 47px;
+  }
+
+}
+
+.author_info {
+
+  @include respond-to-min($resp_step_2) {
+    float: left;
+    width: 180px;
+    padding-top: 12px;
+  }
+
+}
+
+.author_person {
+  @include respond-to-min($resp_step_2) {
+    text-align: center;
+  }
+}
+
+.author_works {
+
+  @include respond-to-min($resp_step_2) {
+    margin-left: 250px;
+  }
+
+}
+
+.author_avatar {
+  margin-bottom: 22px;
+  display: inline-block;
+  vertical-align: top;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    //display: none;
+  }
+}
+
+.mob_filter_toggler {
+  margin-bottom: 33px;
+
+  @include respond-to-min($resp_step_2) {
+    display: none;
+  }
+}
+
+.author_work_options {
+  @extend %clearfix;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+
+  .author_works & {
+    width: 100%;
+  }
+
+  .author_share {
+    float: left;
+    font-size: 12px;
+
+    @include respond-to-max($resp_step_2) {
+      //display: none;
+    }
+  }
+
+  .author_share_list {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 6px;
+
+    li {
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .soc_link {
+      color: #000;
+      margin-bottom: -6px;
+      width: 30px;
+      height: 30px;
+      vertical-align: top;
+      text-align: center;
+
+      &:before {
+        font-size: 22px;
+        line-height: 30px;
+      }
+
+      &:hover {
+        color: $gl_green;
+      }
+    }
+  }
+}
+
+.author_interview {
+  margin-bottom: 20px;
+
+  @include respond-to-max($resp_step_2) {
+    margin-bottom: 15px;
+  }
+}
+
+.author_interview_icon {
+  @extend %icon_before;
+  position: relative;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+
+  &:before {
+    content: $i-microphone;
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+
+.author_sort_block {
+  font-size: 14px;
+
+  @include respond-to-min($resp_step_2) {
+    float: right;
+  }
+}
+
+.filter_form_holder {
+  @include respond-to-max($resp_step_2) {
+    display: none;
+  }
+}
+
+.toddler_holder {
+  position: relative;
+  padding-top: 58px;
+  margin-bottom: 60px;
+}
+
+.toddler_v1 {
+
+  .noUi-target {
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 3px;
+      height: 8px;
+      margin-top: -4px;
+      background: #000;
+      z-index: 2;
+    }
+
+    &:before {
+      left: -2px;
+    }
+
+    &:after {
+      right: -1px;
+    }
+  }
+
+  .noUi-base {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      top: 50%;
+      right: 0;
+      left: 0;
+      background: #000;
+      margin-top: -2px;
+    }
+  }
+
+  .noUi-background {
+    background: none;
+    box-shadow: none;
+
+    &.noUi-origin {
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 4px;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin-top: -2px;
+        background: #000;
+      }
+    }
+  }
+
+  .noUi-connect {
+    background: none;
+    box-shadow: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      top: 50%;
+      right: 0;
+      left: 0;
+      margin-top: -2px;
+      background: $gl_green;
+    }
+
+  }
+
+  .noUi-handle {
+    @extend %icon_before;
+    border: none;
+    cursor: pointer;
+    background: none;
+    box-shadow: none;
+    top: -28px;
+
+    &:before {
+      content: $i-triangle;
+      font-size: 32px;
+      background: none;
+      left: 50%;
+      margin-left: -16px;
+      width: auto;
+      height: auto;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    .noUi-tooltip {
+      position: absolute;
+      width: 60px;
+      left: 50%;
+      bottom: 100%;
+      margin-bottom: -6px;
+      margin-left: -30px;
+      text-align: center;
+    }
+
+  }
+
+}
+
+.works_filter {
+  margin: 38px 0;
+  padding-left: 4px;
+
+  > li {
+    margin-bottom: 22px;
+  }
+}
+
+.related_categories {
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 8px;
+
+    &:not(:last-child):after {
+      content: ',';
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-right: -40px;
+  }
+}
+
+$palette_radius: 80px;
+$palette_list: 'light_gray', 'gray', 'dark_gray', 'red', 'light_red', 'orange', 'yellow', 'light_yellow', 'olive', 'green', 'light_blue', 'blue', 'violette';
+
+.palette_filter_holder {
+  position: relative;
+  padding-top: 10px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 245px;
+  }
+}
+
+.palette_filter_w {
+  position: relative;
+  padding: 30px 12px 37px;
+
+  @include respond-to-min($resp_step_2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 210px;
+    padding: 0;
+  }
+}
+
+.palette_filter {
+  @extend %clearfix;
+  margin-right: -35px;
+  position: relative;
+
+  > li {
+    float: right;
+    padding-right: 34px;
+    margin: 16px 0;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    height: 0;
+    margin: 0;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    > li {
+      padding: 0;
+      position: absolute;
+      margin: -12px 0 0 -12px;
+
+      $R: $palette_radius;
+      $ticks: length($palette_list);
+      $section: (pi()/91); // 91 !important
+      $magic: pi() + $section * ($ticks + 1); // some magic to put first item at 12 o'clock
+
+      @for $i from 1 through $ticks {
+        $clr: nth($palette_list, $i);
+
+        &.palette_#{$clr} {
+          $rad: -((($ticks + 1) * $i * $section) - $magic);
+          top: $R * cos($rad);
+          left: $R * sin($rad);
+        }
+      }
+
+      &.palette_bw {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+}
+

@@ -1,0 +1,141 @@
+.works_container {
+  position: relative;
+  padding: 63px 0 35px;
+
+  @include respond-to-min($resp_step_1) {
+    padding-top: 92px;
+  }
+}
+
+.work_block {
+  padding-top: 15px;
+  margin-bottom: 65px;
+
+  @include respond-to-min($resp_step_1) {
+    padding-top: 40px;
+    margin-bottom: 75px;
+  }
+}
+
+.work_img {
+  position: relative;
+  margin-bottom: 37px;
+
+  img {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    margin-bottom: 65px;
+  }
+
+}
+
+.author_avatar_holder {
+
+  @include respond-to-max($resp_step_2) {
+
+    text-align: center;
+    line-height: 30px;
+
+    .gl_caption.author_name {
+      display: inline-block;
+      padding-left: 17px;
+    }
+  }
+}
+
+.work_info {
+  @extend %clearfix;
+
+  .btn_v1.subscribe_btn {
+    margin-top: 25px;
+  }
+  
+  @include respond-to-max($resp_step_2) {
+
+    .author_avatar {
+      width: 30px;
+      margin-bottom: 14px;
+    }
+
+    .author_interview {
+      margin-bottom: 37px;
+    }
+    
+    .author_contact_form {
+      padding-top: 20px;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    text-align: center;
+
+    .author_person {
+      margin-right: 29px;
+    }
+
+    .author_avatar {
+      width: 90px;
+      margin-bottom: 12px;
+    }
+
+    .author_interview {
+      margin-bottom: 25px;
+    }
+
+    .gl_caption.author_name {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .author_contact_form {
+      margin-left: 29px;
+      padding-top: 5px;
+    }
+
+    .author_person,
+    .author_contact_form {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+    }
+    
+  }
+}
+
+.work_price {
+  text-align: center;
+  padding: 20px;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
+  font: 800 28px $CirceBold;
+}
+
+.work_params {
+  text-align: center;
+  padding-top: 25px;
+
+  > li {
+    margin-top: 14px;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    margin-bottom: 28px;
+  }
+}
+
+.other_works {
+
+  .article_caption {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 21px;
+  }
+
+}
+
+
+

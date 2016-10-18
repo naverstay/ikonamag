@@ -1,0 +1,304 @@
+//************  buttons
+
+%header_btn {
+  @include transition_all(background .3s, color .3s);
+  @extend %icon_before;
+  cursor: pointer;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+
+  &:before {
+    font-size: 26px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.btn_v1 {
+  height: 60px;
+
+  &.search_close_btn,
+  &.header_play_btn,
+  &.header_search_btn {
+    @extend %header_btn;
+    float: right;
+  }
+
+  &.header_search_btn {
+    &:before {
+      content: $i-search;
+    }
+  }
+
+  &.header_play_btn {
+    &:before {
+      content: $i-play;
+    }
+
+    .is_playing & {
+      &:before {
+        content: $i-pause;
+      }
+    }
+  }
+
+  &.search_close_btn {
+
+    &:before {
+      content: $i-Cross;
+    }
+  }
+
+  &.aside_m_btn {
+    @extend %header_btn;
+    float: left;
+
+    &:after,
+    &:before {
+      @include transition_all(border-color .3s);
+      content: '';
+      position: absolute;
+      width: 23px;
+      left: 50%;
+      top: 50%;
+      margin-left: -11px;
+    }
+
+    &:before {
+      margin-top: -10px;
+      height: 19px;
+      bottom: 0;
+      border: solid #fff;
+      border-width: 3px 0;
+    }
+
+    &:after {
+      margin-top: -2px;
+      height: 3px;
+      border-top: 3px solid #fff;
+    }
+
+    .aside_left_open & {
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        border: none;
+        content: $i-Cross;
+      }
+    }
+
+    .search_open & {
+      display: none;
+    }
+  }
+
+  &.slide_more_btn {
+    @include transition_all(background .3s);
+    display: block;
+    text-align: center;
+    font: 800 14px/20px $CirceBold;
+    padding: 20px 33px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+
+  &.subscribe_btn {
+    @include transition_all(color .3s);
+    display: block;
+    width: 100%;
+    text-align: center;
+    font: 800 14px/20px $CirceBold;
+    padding: 20px 33px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+
+}
+
+.btn_v2 {
+  height: 40px;
+
+  &.new_author_btn {
+    @include transition_all(background .3s);
+    text-align: center;
+    display: block;
+    font: 800 12px/20px $CirceBold;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: .95px;
+    margin-top: 5px;
+  }
+
+  &.share_btn {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 20px;
+    font: 800 14px/20px $CirceBold;
+  }
+
+}
+
+.btn_v3 {
+  height: 50px;
+
+  &.post_goback_btn {
+    @extend %icon_before;
+    @include transition_all(color .3s, color .3s);
+    position: absolute;
+    top: 100%;
+    width: 40px;
+    margin-top: 7px;
+    height: 40px;
+    right: 10px;
+    text-align: center;
+    color: #000;
+
+    &:before {
+      content: $i-Cross_back;
+      line-height: 40px;
+      font-size: 26px;
+    }
+
+    &:hover {
+      color: $gl_green;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      width: 50px;
+      margin-top: 24px;
+      height: 50px;
+      right: 15px;
+
+      &:before {
+        line-height: 50px;
+        font-size: 36px;
+      }
+    }
+  }
+
+  &.filter_toggle_btn {
+    @extend %icon_before;
+    @include transition_all(border-color .3s, color .3s);
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 14px 40px;
+    color: #000;
+    font: 14px/20px $CirceBold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #000;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      height: 20px;
+      font-size: 18px;
+      line-height: 20px;
+      margin-top: -10px;
+      content: $i-Dn;
+    }
+
+    .text_on {
+      display: none;
+    }
+
+    &.opened {
+      border-color: $gl_green;
+      color: $gl_green;
+
+      &:before {
+        content: $i-Up;
+      }
+
+      .text_off {
+        display: none;
+      }
+
+      .text_on {
+        display: block;
+      }
+    }
+
+  }
+
+  &.pag_link {
+    text-align: center;
+    width: 50px;
+    color: #000;
+    font-size: 20px;
+
+    &:hover {
+      color: #000;
+      background: $gl_green;
+    }
+
+    .active & {
+      cursor: default;
+      color: $gl_green;
+      background: #000;
+    }
+  }
+}
+
+span.pag_next,
+span.pag_prev {
+  opacity: .5;
+  cursor: default;
+  color: #000 !important;
+}
+
+.black_btn_green {
+  color: #fff;
+  background: #000;
+
+  &:hover {
+    color: $gl_green;
+
+    &:after,
+    &:before {
+      border-color: $gl_green;
+    }
+  }
+}
+
+.black_btn_green_white {
+  color: #fff;
+  background: #000;
+
+  &:hover {
+    background: $gl_green;
+  }
+}
+
+.green_btn_white {
+  color: #000;
+  background: $gl_green;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.blue_btn {
+  @include transition_all(background .3s);
+  background: #3b5997;
+  color: #fff;
+
+  &:hover {
+    background: #496cb3;
+  }
+
+}
+
+

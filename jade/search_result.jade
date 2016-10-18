@@ -1,0 +1,45 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona поиск')
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    .section_inner
+                        .search_result_container
+                            
+                            h2.gl_caption.search_r_caption Результаты поискапо запросу «Арт»
+                            
+                            ul.search_result_block
+                                +loop_while(15)
+                                    li
+                                        .search_result_unit.clr_black
+                                            a.project_img(href='#'): img(src='i/index/project_1.jpg')
+                                            .project_author.gl_caption
+                                                a.gl_link(href='#'): span Татьяна Бородина
+    
+                                            p Я постоянно занимаюсь собирательством, спонтанным или размеренным. Коллекционирую человеческие истории, и поэтому снимаю портреты. Если говорить об уличной фотографии, то я люблю ловить жемчуг – из хаоса вычленять рифмы, люблю случайность настоящей жизни. Такие снимки, как подарки: ничего не планировал, а картинка сама тебя поймала
+    
+                                            .project_date 2 апреля
+                                            .project_r_category Мастер-классы
+                                    
+                        .article_controls.search_r_mode_
+                            
+                            .pagination_holder.search_r_mode
+                                ul.pagination_list.pagination_wide
+                                    li.pag_first: a.pag_link.pag_prev(href='#'): span.mob_hidden Назад
+                                    li.active: a.pag_link.btn_v3(href='#') 1
+                                    li: a.pag_link.btn_v3(href='#') 2
+                                    li: a.pag_link.btn_v3(href='#') 3
+                                    li: a.pag_link.btn_v3.mob_hidden(href='#') 4
+                                    li: a.pag_link.btn_v3.mob_hidden(href='#') 5
+                                    li.pag_last: a.pag_link.pag_next(href='#'): span.mob_hidden Вперёд
+                    .go_top_spacer
+                        
+            +header()
+            +aside_left()
+            +footer()

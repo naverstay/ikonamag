@@ -1,0 +1,437 @@
+mixin dev_head(page_title, index, authors, authors_search, author, post)
+    head
+        title=page_title
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="format-detection", content="telephone=no")
+        link(rel='stylesheet', href='styles/main_global.css', media='all')
+        link(href='https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css')
+        script(src='js/jquery1.10.js')
+        //-script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true')
+        script(src='js/jquery.easy-autocomplete.js')
+        script(src='js/script.js')
+        | 
+        | <!--[if IE 8]>
+        | <script src="js/respond.js"></script>
+        | <link rel="stylesheet" href="styles/ie_8.css" media="all"/>
+        | <![endif]-->
+        | 
+            
+        - if (index)
+            script(src='js/imagesloaded.pkgd.min.js')
+            script(src='js/isotop_center.js')
+            script(src='js/isotope.pkgd.min.js')
+            script(src='js/jquery.backstretch.min.js')
+            script(src='js/slick.js')
+            script(src='js/skrollr.js')
+            script(src='js/jTweener.js')
+            script(src='js/jquery.mousewheel.min.js')
+            script(src='js/portfolio-scroller_drag-flick.js')
+            script(src='js/index.js')
+                        
+        - if (authors)
+            script(src='js/imagesloaded.pkgd.min.js')
+            //-script(src='js/isotop_center.js')
+            script(src='js/isotope.pkgd.min.js')
+            script(src='js/authors.js')
+                                    
+        - if (authors_search)
+            script(src='js/imagesloaded.pkgd.min.js')
+            script(src='js/isotop_center.js')
+            script(src='js/isotope.pkgd.min.js')
+            script(src='js/authors_search.js')
+
+        - if (author)
+            script(src='js/nouislider.min.js')
+            script(src='js/imagesloaded.pkgd.min.js')
+            script(src='js/isotop_center.js')
+            script(src='js/isotope.pkgd.min.js')
+            script(src='js/select2.full.min.js')
+            script(src='js/author.js')
+            
+        - if (post)
+            script(src='js/slick.js')
+            script(src='js/jquery.pjax.js')
+            script(src='js/jquery.fancybox.js')
+            script(src='js/jTweener.js')
+            script(src='js/jquery.mousewheel.min.js')
+            script(src='js/portfolio-scroller_drag-flick.js')
+            script(src='js/post.js')
+            
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+
+mixin header(header_share, progress, post)
+    div.header.main
+        //-.section_inner
+        .header_search_form
+            form(action='#')
+                - if (header_share)
+                    .header_left
+                        .author_share.mob_hidden
+                            span.mb Share
+                            ul.author_share_list
+                                li: a.soc_link.soc_fb(href='#')
+                                li: a.soc_link.soc_tw(href='#')
+                                li: a.soc_link.soc_vk(href='#')
+                    
+                .header_search_bar
+                    .form_row
+                        .header_controls
+                            .header_search_btn.btn_v1.black_btn_green.searchOpenBtn
+                            .header_play_btn.btn_v1.black_btn_green.mob_hidden.playBtn
+                        .header_search_controls
+                            .search_close_btn.btn_v1.black_btn_green.searchCloseBtn
+                            button.header_search_btn.btn_v1.black_btn_green_white
+                            .form_cell.search_cell
+                                input#header_search.f_input.input_v1.autoComplete(placeholder='Что вы хотите найти?' value='Че-то введено сюды')
+
+        .logo_holder: .logo_block
+            a.logo(href='index.html')
+                .logo_ie
+                | <svg version="1.1" id="ikona_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 	 viewBox="0 0 238.1 65.4" style="enable-background:new 0 0 238.1 65.4;" xml:space="preserve"> <g> 	<path d="M0,0v65.4h238.1V0H0z M16.8,59.7H5.7v-54h11.1V59.7z M31.1,59.7l-0.2-54l37,0L42.1,34.3l28.6,25.4H31.1z M96.2,59.7 		c-14.9,0-27-12.1-27-27s12.1-27,27-27c14.9,0,27,12.1,27,27S111.1,59.7,96.2,59.7z M171.4,59.7h-11.1h-28.6l0-54.2l28.6,25.9V5.7 		h11.1V59.7z M181.5,59.7l25-54l26,54L181.5,59.7z"/> </g> </svg>
+                //-| <svg id="ikona_logo" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260.78 88.08"><title>IKONA_LOGO_2.1_вырубка</title><path d="M-11.34-11.34V76.74H249.44V-11.34H-11.34Zm17,71V5.7H16.8v54H5.7Zm65,0H31.1l-0.2-54h37L42.1,34.3Zm-1.5-27a27,27,0,1,1,27,27A27,27,0,0,1,69.2,32.7Zm62.5,27V5.5l28.6,25.9V5.7h11.1v54H131.7Zm49.8,0,25-54,26,54h-51Z" transform="translate(11.34 11.34)"/></svg>
+
+        - if (post)
+            a.btn_v3.post_goback_btn.ajaxLink(href='author.html#content')
+                span.post_goback_text Вернуться 
+
+        - if (progress)
+            .progress_block
+                .progress_val.progressVal(style='width: 25%')
+            
+    div.header.clone
+        //-.section_inner
+        //.header_search_form
+            form(action='#')
+        .header_left
+            .aside_m_btn.btn_v1.black_btn_green.asideLeftToggle
+
+
+mixin aside_left()
+    .aside_block: .aside_b_inner
+        ul.aside_menu
+            li.menu_item
+                a.menu_link(href='author.html') ФОТО
+            li.menu_item
+                a.menu_link(href='author_work.html') ИЛЛЮСТРАЦИИ
+            li.menu_item
+                a.menu_link(href='authors.html') ВИДЕО
+            li.menu_item
+                a.menu_link(href='authors_search.html') РАБОЧЕЕ МЕСТО
+            li.menu_item
+                a.menu_link(href='post.html') МУЗЫКА
+            li.menu_item
+                a.menu_link(href='search_result.html') СПЕЦПРОДУКТ
+
+        ul.aside_links.clr_white
+            li: a.gl_link(href='#'): span О нас
+            li: a.gl_link(href='#'): span Архив
+            
+        ul.aside_soc
+            li: a.soc_link.soc_tw(href='#')
+            li: a.soc_link.soc_vk(href='#')
+            li: a.soc_link.soc_tu(href='#')
+            li: a.soc_link.soc_pi(href='#')
+            li: a.soc_link.soc_fb(href='#')
+            li: a.soc_link.soc_em(href='#')
+            
+mixin palette_check(cls)
+    label.check_emul.check_v3()
+        input.hidden_inp(type='radio' name='palette_color')
+        span.check_text
+            -if (cls == 'bw')
+                span.check_bw
+            
+mixin article_unit()
+    .article_unit(
+        data-100p-top='transform: translate(0%,100px); opacity: 0;'
+        data-80p-top='transform: translate(0%,0px); opacity: 1;'
+        )
+        block
+            
+mixin post(id)
+    .post_container.postContainer
+        .section_inner
+            .post_author_block
+                .post_author
+                    .post_author_avatar.mob_hidden: img(src='i/post/post_author.png')
+                    .post_author_name Мария Климова
+                    .post_author_post Редактор
+
+                .post_date
+                    .mb 25 ноября 2015
+            .text_center
+                h1.gl_caption.post_title_1 Хочется чего-нибудь вкусненького?
+
+        .post_image_wide
+            img(src='i/post/post_1.jpg')
+
+        .section_inner
+            .post_image_author
+                .post_image_avatar: img(src='i/post/post_author_big.png')
+                .gl_caption.post_author_large Ирина Севостьянова
+                .post_location Самара, Россия 
+
+            .post_text
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+                p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore  
+
+                .post_slider_holder.slider_arrow_v1
+                    .postSlider
+                        +loop_while(15)
+                            .slide
+                                img(src='i/post/post_slide_1.jpg')
+
+                .post_photos_author.mob_hidden Photo by Vadim Sherbakov
+
+                .post_thumb_slider_holder.mob_hidden
+                    .postThumbSlider
+                        +loop_while(15)
+                            .slide: a.slide_img(href='#')
+                                img(src='i/post/post_slide_thumb_1.jpg')
+
+                h2.gl_caption.post_title_2 Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt 
+                .post_aside.mob_hidden
+                    .post_aside_img: img(src='i/post/adds_1.jpg')
+                    p.text_center Не хотите немного малинки? 
+
+                p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat 
+
+                .post_nb Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia                                 consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+
+                p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+                h3.gl_caption.post_title_3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+
+                p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+                .post_quote
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    .post_quote_author Johnny Doe
+
+                p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+        .wide_scroller
+
+            .scrollerContainer.post_slider.projectSlider
+                .scrollerWindow.gl_slider.slider_v3.clr_black
+                    .scrollerStripe.scroller_stripe
+                        table
+                            tr
+                                +loop_while(10)
+                                    td.project_item
+                                        .slide
+                                            a.fancyboxLink.scroller_slide(data-fancybox-href='i/post/post_1.jpg' href='javascript:void 0;'  rel="imageset-" + id)
+                                                img(src='i/post/post_scroll_1.png')
+                                    td.project_item
+                                        .slide
+                                            a.fancyboxLink.scroller_slide(data-fancybox-href='i/post/post_wide.jpg' href='javascript:void 0;'  rel="imageset-" + id)
+                                                img(src='i/post/post_scroll_2.png')
+
+                .contrStripe.contr_stripe
+
+                .scrollerController.scroller_controller
+                    .scrollerCatcher.scroller_catcher
+
+
+        .section_inner
+            .post_text
+                p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+                .post_question И как вы пришли к таксидермии при такой любви к животным?
+
+                p Был раньше такой хороший, очень красочный толстый журнал «Советский Союз». И в нём я на развороте увидел репортаж из зоологического музея МГУ. На одной половине там был текст, а на другой — фотографии, чучела. И всё, у меня проснулся к ним огромный интерес.
+
+                .post_question А где вы брали животных?
+
+                p С этим сложно было. То воробушка какого-нибудь найдёшь, а то и, чего скрывать, из рогатки птичку подстрелишь. Потом я решил поступать в институт, обязательно на специальность, связанную с биологией, меня ничего больше не интересовало. И я пошёл в сельхозинститут, учился на зоотехника. На тот момент у меня был уже определённый уровень, и в институте я познакомился с таксидермистом Виталием Николаевым. Начал работать с ним. Со временем это стало моей работой, приносящей доход.
+
+        .text_center
+            .wide_image_holder
+                .wide_img_name A girl on the boat
+                img(src='i/post/post_wide.jpg')
+
+        .section_inner
+            .post_text
+                p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+                    span.clr_green  &#9650;
+
+
+                .see_more_block
+                    .see_more_caption See more
+                    .see_more_content
+                        .see_more_unit
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                            p.clr_black
+                                a.gl_link(href='#'): span www.thisisreallink.net
+
+                        .see_more_unit
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                            p.clr_black
+                                a.gl_link(href='#'): span www.thisisreallink.net
+
+                .text_center
+                    h4.gl_caption.post_title_4 Вам также может быть интересно:
+                .gl_slider.post_interest_slider.slider_v4.slider_arrow_v1: .interestSlider
+                    +loop_while(1)
+                        .slide
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Бездна смотрит в тебя
+
+                        .slide
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+
+                        .slide
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Опыты броуновского движения
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Бездна смотрит в тебя
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Опыты броуновского движения
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Бездна смотрит в тебя
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+
+                        .slide.hide_under_480
+                            .interest_slide.clr_black
+                                a.interest_img(href='#')
+                                    img(src='i/post/interest_1.jpg')
+                                p
+                                    a.gl_link(href='#'): span Опыты броуновского движения
+
+mixin footer()
+    .go_top_btn_holder.goTopBtnHolder
+        a.go_top_btn.goTopBtn(href='#') Наверх
+    .gl_overlay.pageOverlay.asideLeftToggle
+    .footer.goTopBottomMarker
+        .section_inner
+            div.footer_col.author_col
+                a.btn_v2.green_btn_white.new_author_btn(href='#') Become an Author
+                .dev_block
+                    p Made with 
+                        span.dev_heart
+                        |  by  
+                    a.azot(hreef='#')
+                        | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271.47 59.69"><polygon points="2.68 59.69 0 58.35 29.18 0 31.86 0 61.04 58.35 58.35 59.69 30.52 4.03 2.68 59.69"/><polygon class="cls-1" points="129.73 59.69 73.04 59.69 71.98 57.13 126.11 3 73.04 3 73.04 0 129.73 0 130.79 2.56 76.66 56.69 129.73 56.69 129.73 59.69"/><polygon points="271.47 0 214.77 0 214.77 3 241.62 3 241.62 59.69 244.62 59.69 244.62 3 271.47 3 271.47 0"/><path d="M457,327.49a29.85,29.85,0,1,1,29.85-29.85A29.88,29.88,0,0,1,457,327.49Zm0-56.69a26.85,26.85,0,1,0,26.85,26.85A26.88,26.88,0,0,0,457,270.79Z" transform="translate(-284.8 -267.79)"/></svg>
+
+            div.footer_col.attention_col
+                .gl_caption.caption_v1 18+
+                p © 2012–2015 IKONA mag. Новости музыки, искусства. Использование материалов IKONA mag разрешено только с предварительного согласия правообладателей. Все права на картинки и тексты принадлежат их авторам. Сайт может содержать контент, не предназначенный для лиц младше 18-ти лет.
+
+            div.footer_col.division_col.mob_hidden
+                .gl_caption.caption_v1 Разделы
+                ul.footer_menu.clr_white
+                    li: a.gl_link(href='#'): span Фото
+                    li: a.gl_link(href='#'): span Спецпродукт
+                    li: a.gl_link(href='#'): span Музыка
+                    li: a.gl_link(href='#'): span Иллюстрации
+                    li: a.gl_link(href='#'): span Рабочее место
+                    li: a.gl_link(href='#'): span Видео
+                    
+            div.footer_col.popular_col.mob_hidden
+                .gl_caption.caption_v1 Популярные теги
+                ul.footer_tags.clr_white
+                    li: a.gl_link(href='#'): span photo
+                    li: a.gl_link(href='#'): span moscow
+                    li: a.gl_link(href='#'): span saint petersburg
+                    li: a.gl_link(href='#'): span illustration
+                    li: a.gl_link(href='#'): span ukraine
+                    li: a.gl_link(href='#'): span animation
+                    li: a.gl_link(href='#'): span kiev
+                    li: a.gl_link(href='#'): span ad
+                    li: a.gl_link(href='#'): span alphabet
+                    li: a.gl_link(href='#'): span animal
+                    li: a.gl_link(href='#'): span shops
+                    li: a.gl_link(href='#'): span album
+                    li: a.gl_link(href='#'): span album
+                    li: a.gl_link(href='#'): span cover
+                    li: a.gl_link(href='#'): span belarus
+                    li: a.gl_link(href='#'): span advert
+                    li: a.gl_link(href='#'): span photo
+                    li: a.gl_link(href='#'): span accessories
+                    li: a.gl_link(href='#'): span app
+                    li: a.gl_link(href='#'): span architecture
+                    li: a.gl_link(href='#'): span abstract
+                    li: a.gl_link(href='#'): span advertising
+                    li: a.gl_link(href='#'): span samara
+                    li: a.gl_link(href='#'): span affiche
+                    li: a.gl_link(href='#'): span usa
+                    li: a.gl_link(href='#'): span praga
+                    li: a.gl_link(href='#'): span minsk
+                    li: a.gl_link(href='#'): span artwork
+                    li: a.gl_link(href='#'): span ekaterinburg
+                    li: a.gl_link(href='#'): span artisan
+                    li: a.gl_link(href='#'): span animals
+                    li: a.gl_link(href='#'): span awesomeness
+                    li: a.gl_link(href='#'): span tiraspol
+                    li: a.gl_link(href='#'): span amsterdam
+                    li: a.gl_link(href='#'): span кристиан
+                    li: a.gl_link(href='#'): span krasnodar
+                    li: a.gl_link(href='#'): span вена
+                    li: a.gl_link(href='#'): span italy
+                    li: a.gl_link(href='#'): span germany
+                    li: a.gl_link(href='#'): span video
+                    li: a.gl_link(href='#'): span chelyabinsk
+                    li: a.gl_link(href='#'): span london
+                    li: a.gl_link(href='#'): span sochi
+                    li: a.gl_link(href='#'): span novosibirsk
+                    li: a.gl_link(href='#'): span tbilisi
+                    li: a.gl_link(href='#'): span taiga
+                    li: a.gl_link(href='#'): span theory
+                    li: a.gl_link(href='#'): span москва
+                    li: a.gl_link(href='#'): span perm
+                    li: a.gl_link(href='#'): span art
+                    li: a.gl_link(href='#'): span novorosiiisk
+                    li: a.gl_link(href='#'): span habarovsk
+                    li: a.gl_link(href='#'): span vitebsk
+                    li: a.gl_link(href='#'): span parizh

@@ -1,0 +1,21 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona post', false, false, false, false, true)
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    
+                    +post(1)
+                    +post(2)
+                    +post(3)
+                    
+                    //-.go_top_spacer
+
+            +header(true, true, true)
+            +aside_left()
+            +footer()

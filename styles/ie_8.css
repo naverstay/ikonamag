@@ -1,0 +1,36 @@
+
+.share_img:after,
+.article_img:before,
+.scroller_slide:before,
+.interest_img:before,
+.project_img:before,
+.clr_white .gl_link:before,
+.clr_black .gl_link:before,
+.clr_green .gl_link:before {
+    display: none;
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='0')" !important;*/
+}
+
+.share_img:hover:after,
+.article_img:hover:before,
+.scroller_slide:hover:before,
+.interest_img:hover:before,
+.project_img:hover:before,
+.clr_white .gl_link:hover:before,
+.clr_black .gl_link:hover:before,
+.clr_green .gl_link:hover:before {
+    display: block;
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='100')" !important;*/
+}
+
+.header.main {
+    background: #000;
+}
+
+.logo svg {
+    display: none;
+}
+
+.logo_ie {
+    display: block;
+}

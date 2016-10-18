@@ -1,0 +1,141 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona авторы', false, true)
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    .search_container
+                        .section_inner
+                            .text_center
+                                h3.gl_caption.search_caption Artists
+                                .search_result_tip Brows over 144 artists
+                        
+                        //-.section_inner
+                        .section_inner: .article_holder
+                            ul#grid.article_list.clr_black.authors_mod
+                                +loop_while(3)
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_1.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_2.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_3.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Опыты броуновского движения
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_4.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_5.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_6.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Опыты броуновского движения
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_7.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Удачный парадокс? 
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_8.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                             
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_9.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Опыты броуновского движения 
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_10.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                
+                                    li.box
+                                        +article_unit()
+                                            a.article_img(href='author.html'): img(src='i/authors/author_11.jpg')
+                                            .gl_caption.author_caption
+                                                a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                
+    
+                        .section_inner
+                            .article_controls
+                                .text_center
+                                    .load_more
+                                        .load_more_box
+                                            span.load_more_arr.load_more_left
+                                            span.load_more_arr.load_more_top
+                                            span.load_more_arr.load_more_right
+                                            span.load_more_arr.load_more_bottom
+                                        .load_more_text Load more
+                                
+                                .pagination_holder
+                                    ul.pagination_list
+                                        li: a.pag_link.pag_prev(href='#'): span.mob_hidden Назад
+                                        li.active: a.pag_link.btn_v3(href='#') 1
+                                        li: a.pag_link.btn_v3(href='#') 2
+                                        li: a.pag_link.btn_v3(href='#') 3
+                                        li: a.pag_link.btn_v3.mob_hidden(href='#') 4
+                                        li: a.pag_link.btn_v3.mob_hidden(href='#') 5
+                                        li: a.pag_link.pag_next(href='#'): span.mob_hidden Вперёд
+                        .search_filter
+                            .section_inner
+                                .search_table_w: .search_table.gl_link_hover_2
+                                    .search_item.clr_black: a.gl_link(href='#'): span A
+                                    .search_item.clr_black: a.gl_link(href='#'): span B
+                                    .search_item.clr_black: a.gl_link(href='#'): span C
+                                    .search_item.clr_black: a.gl_link(href='#'): span D
+                                    .search_item.clr_black: a.gl_link(href='#'): span E
+                                    .search_item.clr_black: a.gl_link(href='#'): span F
+                                    .search_item.clr_black: a.gl_link(href='#'): span G
+                                    .search_item.clr_black: a.gl_link(href='#'): span H
+                                    .search_item.clr_black: a.gl_link(href='#'): span I
+                                    .search_item.clr_black: a.gl_link(href='#'): span J
+                                    .search_item.clr_black: a.gl_link(href='#'): span K
+                                    .search_item.clr_black: a.gl_link(href='#'): span L
+                                    .search_item.clr_black: a.gl_link(href='#'): span M
+                                    .search_item.clr_black: a.gl_link(href='#'): span N
+                                    .search_item.clr_black: a.gl_link(href='#'): span O
+                                    .search_item.clr_black: a.gl_link(href='#'): span P
+                                    .search_item.clr_black: a.gl_link(href='#'): span Q
+                                    .search_item.clr_black: a.gl_link(href='#'): span R
+                                    .search_item.clr_black: a.gl_link(href='#'): span S
+                                    .search_item.clr_black: a.gl_link(href='#'): span U
+                                    .search_item.clr_black: a.gl_link(href='#'): span V
+                                    .search_item.clr_black: a.gl_link(href='#'): span W
+                                    .search_item.clr_black: a.gl_link(href='#'): span X
+                                    .search_item.clr_black: a.gl_link(href='#'): span Y
+                                    .search_item.clr_black: a.gl_link(href='#'): span Z
+
+                    .go_top_spacer
+                        
+            +header()
+            +aside_left()
+            +footer()

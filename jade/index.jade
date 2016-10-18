@@ -1,0 +1,335 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona главная', true)
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    .main_slider_w
+                        .gl_slider.mainSlider.slider_v1
+                            .slide
+                                img.bsImage(src='i/index/slide_1.jpg')
+                                .slide_inner.clr_white
+                                    .gl_table: .gl_table_cell
+                                        .slide_hero
+                                            .gl_caption.hero_caption Лена Холкина
+                                            p «Мне очень удобно работать с собой, удобнее, чем с кем-либо. Мне хорошо наедине 
+                                                | с&nbsp;камерой, у нас взаимопонимание. Пространство очень важно и часто является полноправным участником процесса, вдохновителем и свидетелем.»
+                                            
+                                            ul.slide_controls
+                                                li: a.btn_v1.green_btn_white.slide_more_btn(href='#') Узнать больше
+
+                            .slide
+                                img.bsImage(src='i/index/slide_1.jpg')
+                                .slide_inner.clr_white
+                                    .gl_table: .gl_table_cell
+                                        .slide_hero
+                                            .gl_caption.hero_caption Лена Холкина 2
+                                            p «Мне очень удобно работать с собой, удобнее, чем с кем-либо. Мне хорошо наедине 
+                                                | с&nbsp;камерой, у нас взаимопонимание. Пространство очень важно и часто является полноправным участником процесса, вдохновителем и свидетелем.»
+                                            
+                                            ul.slide_controls
+                                                li: a.btn_v1.green_btn_white.slide_more_btn(href='#') Узнать больше
+
+                            .slide
+                                img.bsImage(src='i/index/slide_1.jpg')
+                                .slide_inner.clr_white
+                                    .gl_table: .gl_table_cell
+                                        .slide_hero
+                                            .gl_caption.hero_caption Лена Холкина 3
+                                            p «Мне очень удобно работать с собой, удобнее, чем с кем-либо. Мне хорошо наедине 
+                                                | с&nbsp;камерой, у нас взаимопонимание. Пространство очень важно и часто является полноправным участником процесса, вдохновителем и свидетелем.»
+                                            
+                                            ul.slide_controls
+                                                li: a.btn_v1.green_btn_white.slide_more_btn(href='#') Узнать больше
+                                                
+                    .project_slider.projectSlider.scrollerContainer
+                        .gl_slider.slider_v2.clr_black.scrollerWindow#scroller_window_
+                            #scroller_stripe_.scroller_stripe.scrollerStripe
+                                table
+                                    tr
+                                        +loop_while(10)
+                                            td.project_item
+                                                .slide
+                                                    a.project_img(href='#'): img(src='i/index/project_1.jpg')
+                                                    .project_category ВЫСТАВКИ
+                                                    .project_info
+                                                        a.gl_link(href='#'): span Шестая московская биеннале современного искусства
+                                                    .project_date 4 - 16 декабря
+                                                        
+                                            td.project_item
+                                                .slide
+                                                    a.project_img(href='#'): img(src='i/index/project_2.jpg')
+                                                    .project_category Вестивали
+                                                    .project_info
+                                                        a.gl_link(href='#'): span Опыты броуновского движения
+                                                    .project_date 4 - 16 декабря
+                                                        
+                                            td.project_item
+                                                .slide
+                                                    a.project_img(href='#'): img(src='i/index/project_3.jpg')
+                                                    .project_category Мастер-классы
+                                                    .project_info
+                                                        a.gl_link(href='#'): span Шестая московская биеннале современного искусства
+                                                    .project_date 4 - 16 декабря
+
+                        #contr-stripe_.contr_stripe.contrStripe
+                        
+                        #scroller_controller_.scroller_controller.scrollerController
+                            #scroller_catcher_.scroller_catcher.scrollerCatcher
+                            
+                    //-.section_inner
+                    .article_holder
+                        .isotopeWidth.isotope_width
+                        ul#grid.article_list.clr_black
+                            li.grid_sizer
+                            +loop_while(1)
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_1.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Roma Hkleb 
+                                        p Можно запросто совершить открытие или изменить свою жизнь, но стоит вернуться домой, и тут же тебя путают щупальца быта.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+                                                
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_2.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Вик Лащенов
+                                        p Искусство - это прекрасно. Искусство - это то, что может остаться после нас. И, возможно, вдохновить кого-то на что-либо. Мы все являемся в своем роде проводниками определенных эмоций, символов, образов. Мы передаем их дальше в визуальном форме.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+                                                                                                
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_3.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Татьяна Бородина
+                                        p Я постоянно занимаюсь собирательством, спонтанным или размеренным. Коллекционирую человеческие истории, и поэтому снимаю портреты. Если говорить об уличной фотографии, то я люблю ловить жемчуг – из хаоса вычленять рифмы, люблю случайность настоящей жизни. Такие снимки, как подарки: ничего не планировал, а картинка сама тебя поймала
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+    
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_6.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Павлова и Павловский
+                                        p Сочинять вместе, делиться, быть в диалоге сейчас – настолько же естественно, как есть и спать. У нас одна история на двоих, и я уже не представляю, как может быть иначе.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+                                                        
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_4.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Лиза Дедова
+                                        p Глядя на уже сделанный снимок, я могу отрефлексировать те вещи, которые я переживала в момент, изображенный на снимке. Мне кажется, так я больше понимаю о себе - о том, что мне важно, и что мне безразлично.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+    
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_5.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Женя Выгузов
+                                        p Искусство - это прекрасно. Искусство - это то, что может остаться после нас. И, возможно, вдохновить кого-то на что-либо. Мы все являемся в своем роде проводниками определенных эмоций, символов, образов. Мы передаем их дальше в визуальном форме.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+    
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_7.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                        p Street Art сегодняшнего дня давно не ограничивает себя стенами домов, заборов, заброшенных кварталов и претендует на официальность существования, упорно стараясь не изменять своей внутренней цензуре. Сложность заключалась в том, каким образом можно оформить свободу мысли и полет фантазии в ландшафте определенного ограниченного пространства. Поиск путей решения этой проблемы нашел свое отражение и в России. В Санкт-Петербурге такой диалог художника с улицы и директора в костюме теперь можно наблюдать своими глазами.
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+                                                
+                                                        
+                                                        
+                                li.box
+                                    +article_unit()
+                                        .article_soc_block
+                                            ul.article_soc_list
+                                                li: a.soc_link.soc_vk(href='#')
+                                                li: a.soc_link.soc_fb(href='#')
+                                                li: a.soc_link.soc_tw(href='#')
+                                                li: a.soc_link.soc_in(href='#')
+                                                        
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_9.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Nikita Nomerz
+                                        p Где эта грань и кому решать что вандализм, что искусство, что вредит, а что улучшает городскую среду?
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+    
+                                li.box
+                                    +article_unit()
+                                        a.article_img(href='#'): img(src='i/index/article_8.jpg')
+                                        .gl_caption.article_caption
+                                            a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                        p Я постоянно занимаюсь собирательством,  часто спонтанным или размеренным. Коллекционирую человеческие истории, и поэтому снимаю портреты. Если говорить об уличной фотографии, то я люблю ловить жемчуг – из хаоса вычленять рифмы, люблю случайность настоящей жизни. Такие снимки, как подарки: ничего не планировал, а картинка сама тебя поймала
+    
+                                        table.article_footer
+                                            tr
+                                                td.col_1
+                                                    a.article_au_avatar(href='#')
+                                                        img(src='i/index/author_1.png')
+                                                td.col_2
+                                                    .article_au_name.clr_black: a.gl_link(href='#'): span Елизавета Семенова
+                                                td.col_3
+                                                    .article_info
+                                                        .clr_black.article_counter: a.gl_link(href='#'): span Illustrations
+                                                        span.article_counter_val 514
+
+                    .section_inner
+                        .article_controls
+                            .text_center
+                                .load_more
+                                    .load_more_box
+                                        span.load_more_arr.load_more_left
+                                        span.load_more_arr.load_more_top
+                                        span.load_more_arr.load_more_right
+                                        span.load_more_arr.load_more_bottom
+                                    .load_more_text Load more
+                            
+                            .pagination_holder
+                                ul.pagination_list
+                                    li: span.pag_link.pag_prev: span.mob_hidden Назад
+                                    li.active: a.pag_link.btn_v3(href='#') 1
+                                    li: a.pag_link.btn_v3(href='#') 2
+                                    li: a.pag_link.btn_v3(href='#') 3
+                                    li: a.pag_link.btn_v3.mob_hidden(href='#') 4
+                                    li: a.pag_link.btn_v3.mob_hidden(href='#') 5
+                                    li: a.pag_link.pag_next(href='#'): span.mob_hidden Вперёд
+                                    
+                    .section_inner
+                        .share_block
+                            .share_unit.mob_hidden
+                                a.share_img.share_fb(href='#'): img(src='i/index/share_author.jpg')
+                                
+                                .share_provider
+                                    .gl_caption.share_caption Facebook
+                                    p On daily feed
+                                    a.btn_v2.share_btn.blue_btn(href='#') Like
+
+                            ul.share_list
+                                li: a.soc_link.soc_tw(href='#')
+                                li: a.soc_link.soc_vk(href='#')
+                                li: a.soc_link.soc_tu(href='#')
+                                li: a.soc_link.soc_pi(href='#')
+                                li: a.soc_link.soc_fb(href='#')
+                                li: a.soc_link.soc_em(href='#')
+                        
+                    .section_inner
+                        .subscribe_block
+                            .gl_caption.subscribe_caption Weekly Newsletter?
+                            form(action='#')
+                                .form_row
+                                    .form_cell.f_cell_w_400.f_cell_inline
+                                        input.f_input.input_v2.text_center(placeholder='Your e-mail adress')
+                                        
+                                    .form_cell.f_cell_w_400.f_cell_inline
+                                        button.btn_v1.subscribe_btn.black_btn_green Subscribe
+                                        
+                    .section_inner
+                        .gl_caption.insta_caption.clr_green.text_center
+                            span.clr_black Latest from Instagramm 
+                            a.gl_link.insta_link(href='#'): span @ikonamag
+                                
+                    .insta_list_w.goTopBottomMarker: ul.insta_list
+                        li: a.insta_img(href='#'): img(src='i/index/ins_1.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_2.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_3.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_1.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_2.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_1.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_2.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_3.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_1.jpg')
+                        li: a.insta_img(href='#'): img(src='i/index/ins_2.jpg')
+
+
+            +header()
+            +aside_left()
+            +footer()

@@ -1,0 +1,216 @@
+
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Ikona автор', false, false, false, true)
+
+    body
+        .wrapper
+            //.rect_1024
+            .base.searchCloseBtn
+                div#content.main_content
+                    .section_inner
+                        .author_block
+                            .author_info
+                                .mob_filter_toggler
+                                    a.btn_v3.filter_toggle_btn.filterToggleBtn(href='#')
+                                        span.text_on Hide filter
+                                        span.text_off Show filter
+                                .author_person
+                                    .author_avatar.mob_hidden
+                                        img(src='i/authors/avatar_2.png')
+                                    
+                                    .gl_caption.author_name 
+                                        | Lera 
+                                        span.mob_hidden <br> 
+                                        |  Kudryavceva
+                        
+                                    .clr_black.author_interview
+                                        span.author_interview_icon
+                                        a.gl_link.author_interview_link(href='#'): span Read interview
+                                        
+                                .filter_form_holder.filterForm: form(action='#')
+                                    .toddler_holder.toddler_v1
+                                        .filterPeriod
+                                        
+                                    .form_cell
+                                        label.check_emul.check_v1
+                                            input.hidden_inp(type='checkbox')
+                                            span.check_text Only for sale
+                                        
+                                    ul.works_filter
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Photography
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Sculpture
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Prints & Multiples
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Works on paper
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Film & Video
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Design
+                                                
+                                        li
+                                            label.check_emul.check_v2
+                                                input.hidden_inp(type='checkbox')
+                                                span.check_text Jewerly
+                                                
+                                                
+                                    .palette_filter_holder
+                                                    
+                                        .gl_caption.filter_caption Related Categories: 
+    
+                                        ul.related_categories.clr_black
+                                            li: a.gl_link(href='#'): span Oil Painting
+                                            li: a.gl_link(href='#'): span Striped
+                                            li: a.gl_link(href='#'): span Visual Perception
+                                            li: a.gl_link(href='#'): span Line
+                                            li: a.gl_link(href='#'): span Form and Color
+                                            li: a.gl_link(href='#'): span Math
+                                            li: a.gl_link(href='#'): span Silkscreen
+                                            li: a.gl_link(href='#'): span Angular
+                                            li: a.gl_link(href='#'): span Linear Forms
+                                            li: a.gl_link(href='#'): span Primary Abstraction
+                                            li: a.gl_link(href='#'): span Focus on Materials
+                                            li: a.gl_link(href='#'): span United States
+                                            li: a.gl_link(href='#'): span Trompe l’oeil
+                                            li: a.gl_link(href='#'): span Painting
+                                            li: a.gl_link(href='#'): span Work on Paper
+                                            li: a.gl_link(href='#'): span Sculpture
+                                            
+                                        .palette_filter_w
+                                            ul.palette_filter
+                                                - var values = ['red', 'dark_gray',  'gray' ,'light_gray', 'bw' , 'green', 'light_blue', 'blue', 'violette',  'olive', 'light_yellow', 'yellow', 'orange', 'light_red'];
+                                                each cls in values.length ? values : ['empty']
+                                                    li.palette_item(class='palette_' + cls)
+                                                        +palette_check(cls)
+                                            
+                            .author_works
+                                .author_work_options: form(action='#')
+                                    .author_share.mob_hidden
+                                        span.mb Share
+                                        ul.author_share_list
+                                            li: a.soc_link.soc_fb(href='#')
+                                            li: a.soc_link.soc_tw(href='#')
+                                            li: a.soc_link.soc_vk(href='#')
+                                            
+                                    .author_sort_block
+                                        span.mb Sort by
+                                        .form_el.sort_control.select_v1
+                                            select.select2
+                                                option Popularity
+                                                option Price
+                                                option Resent
+                                            
+                                
+                                ul#grid.article_list.clr_black.authors_mod
+                                    +loop_while(3)
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_1.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_2.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_3.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_4.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_5.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_6.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_7.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? 
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_8.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                 
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_9.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Опыты броуновского движения 
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_10.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Тайное окно в мир тонкой душевной организации
+                                                    
+                                        li.box
+                                            +article_unit()
+                                                a.article_img(href='author.html'): img(src='i/authors/author_11.jpg')
+                                                .gl_caption.author_caption
+                                                    a.gl_link(href='#'): span Удачный парадокс? Уличное искусство в рамках
+                                                    
+                                .article_controls
+                                    .text_center
+                                        .load_more
+                                            .load_more_box
+                                                span.load_more_arr.load_more_left
+                                                span.load_more_arr.load_more_top
+                                                span.load_more_arr.load_more_right
+                                                span.load_more_arr.load_more_bottom
+                                            .load_more_text Load more
+                                    
+                                    .pagination_holder
+                                        ul.pagination_list
+                                            li: a.pag_link.pag_prev(href='#'): span.mob_hidden Назад
+                                            li.active: a.pag_link.btn_v3(href='#') 1
+                                            li: a.pag_link.btn_v3(href='#') 2
+                                            li: a.pag_link.btn_v3(href='#') 3
+                                            li: a.pag_link.btn_v3.mob_hidden(href='#') 4
+                                            li: a.pag_link.btn_v3.mob_hidden(href='#') 5
+                                            li: a.pag_link.pag_next(href='#'): span.mob_hidden Вперёд
+                        
+                        .go_top_spacer
+                            
+            +header()
+            +aside_left()
+            +footer()
